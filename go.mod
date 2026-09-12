@@ -20,10 +20,9 @@ require (
 	github.com/RuneRoven/benthosADS v1.0.10
 	github.com/RuneRoven/benthosAlarm v1.0.0
 	github.com/RuneRoven/benthosSMTP v0.0.1
-	github.com/RuneRoven/go-ads/v2 v2.2.0
 	github.com/bufbuild/protocompile v0.14.1
 	github.com/cespare/xxhash/v2 v2.3.0
-	github.com/danomagnum/gologix v0.35.1-beta
+	github.com/danomagnum/gologix v0.41.0-beta
 	github.com/dop251/goja v0.0.0-20260723142020-b4aef50fa347
 	github.com/eclipse/paho.mqtt.golang v1.5.1
 	github.com/goccy/go-json v0.10.6
@@ -120,6 +119,7 @@ require (
 	github.com/PaesslerAG/jsonpath v0.1.1 // indirect
 	github.com/ProtonMail/go-crypto v1.4.1 // indirect
 	github.com/RoaringBitmap/roaring/v2 v2.15.0 // indirect
+	github.com/RuneRoven/go-ads/v2 v2.2.0 // indirect
 	github.com/andybalholm/brotli v1.2.1 // indirect
 	github.com/apache/arrow-go/v18 v18.6.0 // indirect
 	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
