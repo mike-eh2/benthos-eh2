@@ -15,6 +15,7 @@
 package downsampler_plugin
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"time"
@@ -201,6 +202,16 @@ func (mp *MessageProcessor) extractTimestamp(dataMap map[string]interface{}) (ti
 		ts = int64(v)
 	case int64:
 		ts = v
+	case json.Number:
+		// A message whose body has round-tripped through real JSON bytes
+		// (rather than being built in-process via SetStructured) decodes
+		// numbers as json.Number, not float64 - this is the common case
+		// once this message crosses a processor/broker boundary.
+		f, err := v.Float64()
+		if err != nil {
+			return time.Time{}, fmt.Errorf("invalid timestamp_ms json.Number: %w", err)
+		}
+		ts = int64(f)
 	default:
 		return time.Time{}, fmt.Errorf("invalid timestamp_ms type: %T", timestampMs)
 	}
